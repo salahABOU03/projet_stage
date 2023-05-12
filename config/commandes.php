@@ -85,6 +85,18 @@ function afficherUnProduit($id)
     }
   }
 
+  function ajouteraverf($id,$image, $nom, $prix, $desc)
+  {
+    if(require("connexion.php"))
+    {
+      $req = $access->prepare("INSERT INTO produits_verf (id,image, nom, prix, description) VALUES (?,?, ?, ?, ?)");
+
+      $req->execute(array($id,$image, $nom, $prix, $desc));
+
+      $req->closeCursor();
+    }
+  }
+
 function afficher()
 {
 	if(require("connexion.php"))
@@ -92,6 +104,22 @@ function afficher()
 		$req=$access->prepare("SELECT * FROM produits ORDER BY id DESC");
 
         $req->execute();
+
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+
+        return $data;
+
+        $req->closeCursor();
+	}
+}
+
+function afficherid($id)
+{
+	if(require("connexion.php"))
+	{
+		$req=$access->prepare("SELECT * FROM produits WHERE id=? ORDER BY id DESC");
+
+        $req->execute(array($id));
 
         $data = $req->fetchAll(PDO::FETCH_OBJ);
 
@@ -130,6 +158,8 @@ function afficher_comm(){
         $req->closeCursor();
 	}
 }
+
+
 
 function supprimer($id)
 {

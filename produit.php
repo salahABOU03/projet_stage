@@ -9,7 +9,8 @@ if(isset($_GET['pdt'])){
     if(!empty($_GET['pdt']) OR is_numeric($_GET['pdt']))
     {
         $id = $_GET['pdt'];
-
+        $p= afficherid($id);
+        echo $p->prix ; 
     }
 }
 

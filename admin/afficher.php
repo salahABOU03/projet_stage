@@ -29,7 +29,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <title>Tous les produits</title>
+    <title>Tous les produits : </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -60,6 +60,10 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
     </div>
 </div>
 </nav>
+<div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+  <h1> Les produits disponibles en magasin </h1>
+</div>
+
 
 <div class="album py-5 bg-light">
     <div class="container">
@@ -92,8 +96,18 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
 
             </tbody>
             </table>
+
+
+
     </div>
 </div>
+
+
+<div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+  <h1> Les produits demandés :</h1>
+</div> 
+
+
 </div>
 <div class="album py-5 bg-light">
     <div class="container">
