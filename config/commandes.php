@@ -97,6 +97,18 @@ function afficherUnProduit($id)
     }
   }
 
+  function ajouteracomm($id,$image, $nom, $prix, $desc)
+  {
+    if(require("connexion.php"))
+    {
+      $req = $access->prepare("INSERT INTO produits_comm (id,image, nom, prix, description) VALUES (?,?, ?, ?, ?)");
+
+      $req->execute(array($id,$image, $nom, $prix, $desc));
+
+      $req->closeCursor();
+    }
+  }
+
 function afficher()
 {
 	if(require("connexion.php"))
@@ -166,6 +178,31 @@ function supprimer($id)
 	if(require("connexion.php"))
 	{
 		$req=$access->prepare("DELETE FROM produits WHERE id=?");
+
+		$req->execute(array($id));
+
+		$req->closeCursor();
+	}
+}
+
+
+function supprimerverf($id)
+{
+	if(require("connexion.php"))
+	{
+		$req=$access->prepare("DELETE FROM produits_verf WHERE id=?");
+
+		$req->execute(array($id));
+
+		$req->closeCursor();
+	}
+}
+
+function supprimercomm($id)
+{
+	if(require("connexion.php"))
+	{
+		$req=$access->prepare("DELETE FROM produits_comm WHERE id=?");
 
 		$req->execute(array($id));
 

@@ -124,9 +124,9 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
               <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="produit.php?pdt=<?= $produit->id ?>"><button type="button" class="btn btn-sm btn-success">Voir plus</button></a>
+                  <a href="livrer.php?pdt=<?= $produit->id ?>"><button type="button" class="btn btn-sm btn-success">Livrer</button></a>
                 </div>
-                <small class="text" style="font-weight: bold;"><?= $produit->prix ?> €</small>
+              
               </div>
             </div>
           </div>

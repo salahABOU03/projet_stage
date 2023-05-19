@@ -44,12 +44,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
     <li class="nav-item">
         <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="../admin/afficher.php">Produits</a>
         </li>
-        <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="../admin/">Nouveau</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="supprimer.php">Suppression</a>
-        </li>
+       
         
     </ul>
     <div style="margin-right: 500px">
@@ -75,9 +70,9 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
               <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="produit.php?pdt=<?= $produit->id ?>"><button type="button" class="btn btn-sm btn-success">Voir plus</button></a>
+                  <a href="acomm.php?pdt=<?= $produit->id ?>"><button type="button" class="btn btn-sm btn-success">commander</button></a>
                 </div>
-                <small class="text" style="font-weight: bold;"><?= $produit->prix ?> €</small>
+             
               </div>
             </div>
           </div>
