@@ -85,27 +85,29 @@ function afficherUnProduit($id)
     }
   }
 
-  function ajouteraverf($id,$image, $nom, $prix, $desc)
+  function ajouteraverf($id,$image, $nom, $prix, $desc, $commentaire, $nombreProduits)
   {
     if(require("connexion.php"))
     {
-      $req = $access->prepare("INSERT INTO produits_verf (id,image, nom, prix, description) VALUES (?,?, ?, ?, ?)");
+      $req = $access->prepare("INSERT INTO produits_verf (id,image, nom, prix, description,commentaire,quantité) VALUES (?,?,?,?,?,?,?)");
 
-      $req->execute(array($id,$image, $nom, $prix, $desc));
+      $req->execute(array($id,$image, $nom, $prix, $desc, $commentaire, $nombreProduits));
 
       $req->closeCursor();
     }
   }
 
-  function ajouteracomm($id,$image, $nom, $prix, $desc)
+  function ajouteracomm($id,$image, $nom, $prix, $desc, $commentaire, $quantité)
   {
+    
+    
     if(require("connexion.php"))
     {
-      $req = $access->prepare("INSERT INTO produits_comm (id,image, nom, prix, description) VALUES (?,?, ?, ?, ?)");
+    $req = $access->prepare("INSERT INTO produits_comm (id,image, nom, prix, description,commentaire,quantité) VALUES (?,?,?,?,?,?,?)");
 
-      $req->execute(array($id,$image, $nom, $prix, $desc));
+    $req->execute(array($id,$image, $nom, $prix, $desc,$commentaire,$quantité ));
 
-      $req->closeCursor();
+     $req->closeCursor();
     }
   }
 

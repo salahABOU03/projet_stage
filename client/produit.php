@@ -1,6 +1,6 @@
 <?php
 
-require("config/commandes.php");
+require("../config/commandes.php");
 
 $Produits=afficher();
 
@@ -10,7 +10,7 @@ if(isset($_GET['pdt'])){
     {
         $id = $_GET['pdt'];
         $p= afficherid($id);
-        echo $p->prix ; 
+        echo $p->prix;
     }
 }
 

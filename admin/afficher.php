@@ -75,7 +75,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
                 <th scope="col">#</th>
                 <th scope="col">image</th>
                 <th scope="col">nom</th>
-                <th scope="col">prix</th>
+                <th scope="col">Quantité</th>
                 <th scope="col">Description</th>
                 <th scope="col">Editer</th>
                 </tr>
@@ -88,7 +88,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
                 <img src="<?= $produit->image ?>" style="width: 15%">
                 </td>
                 <td><?= $produit->nom ?></td>
-                <td style="font-weight: bold; color: green;"><?= $produit->prix ?>€</td>
+                <td style="font-weight: bold; color: green;"><?= $produit->prix ?></td>
                 <td><?= substr($produit->description, 0, 100); ?>...</td>
                 <td><a href="editer.php?id=<?= $produit->id ?>"><i class="fa fa-pencil" style="font-size: 30px;"></i></a></td>
                 </tr>      
@@ -114,24 +114,28 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-      <?php foreach($produitscomm as $produit): ?> 
-        <div class="col">
-          <div class="card shadow-sm">
+      <?php foreach ($produitscomm as $produit): ?>
+    <div class="col">
+        <div class="card shadow-sm">
             <h3><?= $produit->nom ?></h3>
             <img src="<?= $produit->image ?>" style="width: 24%">
 
             <div class="card-body">
-              <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="livrer.php?pdt=<?= $produit->id ?>"><button type="button" class="btn btn-sm btn-success">Livrer</button></a>
+                <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
+                <p>Quantité: <?= $produit->quantité ?></p>
+                <p>Commentaire: <?= $produit->commentaire ?></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a href="livrer.php?pdt=<?= $produit->id ?>">
+                            <button type="button" class="btn btn-sm btn-success">Commander</button>
+                        </a>
+                    </div>
                 </div>
-              
-              </div>
             </div>
-          </div>
         </div>
-  <?php endforeach; ?>
+    </div>
+<?php endforeach; ?>
+
 
 
       </div>

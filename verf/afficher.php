@@ -60,27 +60,42 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-      <?php foreach($produits as $produit): ?> 
-        <div class="col">
-          <div class="card shadow-sm">
+    
+    
+    
+      <?php foreach ($produits as $produit): ?>
+    <div class="col">
+        <div class="card shadow-sm">
             <h3><?= $produit->nom ?></h3>
             <img src="<?= $produit->image ?>" style="width: 24%">
 
             <div class="card-body">
-              <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="acomm.php?pdt=<?= $produit->id ?>"><button type="button" class="btn btn-sm btn-success">commander</button></a>
+                <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
+                <p>Quantité: <?= $produit->quantité ?></p>
+                <p>Commentaire: <?= $produit->commentaire ?></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a href="acomm.php?pdt=<?= $produit->id ?>">
+                            <button type="button" class="btn btn-sm btn-success">Commander</button>
+                        </a>
+                    </div>
                 </div>
-             
-              </div>
             </div>
-          </div>
         </div>
-  <?php endforeach; ?>
+    </div>
+<?php endforeach; ?>
 
-
-      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
     </div>
   </div>
 

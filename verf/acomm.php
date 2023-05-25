@@ -13,12 +13,14 @@ if(isset($_GET['pdt'])){
 }
 
  foreach($Produits as $produit){ if($produit->id == $id){ 
-   
+    
+    $nombreProduits=$produit->quantité; 
+    $commentaire=$produit->commentaire ;
     $image = $produit->image ;
     $nom = $produit->nom ;
     $prix = $produit->prix ;
     $desc = $produit->description ;
-    ajouteracomm($id,$image, $nom, $prix, $desc) ;
+    ajouteracomm($id,$image, $nom, $prix, $desc, $commentaire, $nombreProduits) ;
     supprimerverf($id) ; 
 
  }} 

@@ -1,7 +1,7 @@
 <?php
 // session_start();
 
-include "config/commandes.php";
+include "../config/commandes.php";
 
 // if(isset($_SESSION['userxXJppk45hPGu']))
 // {

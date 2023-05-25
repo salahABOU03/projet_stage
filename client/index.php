@@ -1,6 +1,6 @@
 <?php
 
-require("config/commandes.php");
+require("../config/commandes.php");
 
   $Produits=afficher();
 
@@ -87,10 +87,16 @@ require("config/commandes.php");
             <div class="card-body">
               <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="averf.php?pdt=<?= $produit->id ?>"><button type="button" class="btn btn-sm btn-success">Voir plus</button></a>
-                </div>
-                <small class="text" style="font-weight: bold;"><?= $produit->prix ?> €</small>
+              <form action="averf.php?pdt=<?= $produit->id ?>" method="post">
+    <label for="nombreProduits">Nombre de produits :</label>
+    <input type="number" id="nombreProduits" name="nombreProduits" min="0">
+    <br><br>
+    <label for="commentaire">Commentaire :</label>
+    <input type="text" id="commentaire" name="commentaire"> 
+    <input class="btn btn-sm btn-success" type="submit" value="Soumettre">
+  </form> 
+  
+            <small class="text" style="font-weight: bold;">Disponible : <?= $produit->prix ?> </small>
               </div>
             </div>
           </div>
