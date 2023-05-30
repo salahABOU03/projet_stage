@@ -14,7 +14,7 @@ if(empty($_SESSION['xRttpHo0greL39']))
 require("../config/commandes.php");
 
 $produits = afficher_verf();
-
+$Produitsq=afficher();
 foreach($_SESSION['xRttpHo0greL39'] as $i){
     $nom = $i->pseudo;
     $email = $i->email;
@@ -73,10 +73,15 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
                 <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
                 <p>Quantité: <?= $produit->quantité ?></p>
                 <p>Commentaire: <?= $produit->commentaire ?></p>
+                <p>Division: <?= $produit->division ?></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <a href="acomm.php?pdt=<?= $produit->id ?>">
-                            <button type="button" class="btn btn-sm btn-success">Commander</button>
+                           <small class="text" style="font-weight: bold; color: green;">Disponible: <?= $produit->prix ?> </small>
+<br>
+                            <button type="button" class="btn btn-sm btn-success">Confirmer
+        
+                            </button>
                         </a>
                     </div>
                 </div>

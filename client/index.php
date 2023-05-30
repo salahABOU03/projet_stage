@@ -90,15 +90,18 @@ require("../config/commandes.php");
               <form action="averf.php?pdt=<?= $produit->id ?>" method="post">
     <label for="nombreProduits">Nombre de produits :</label>
     <input type="number" id="nombreProduits" name="nombreProduits" min="0">
-    <br><br>
+    <br>
+    <label for="Division">Division :</label>
+    <input type="text" id="commentaire" name="division">
     <label for="commentaire">Commentaire :</label>
-    <input type="text" id="commentaire" name="commentaire"> 
+    <input type="text" id="commentaire" name="commentaire" > 
+    <br><br>
     <input class="btn btn-sm btn-success" type="submit" value="Soumettre">
   </form> 
   
-            <small class="text" style="font-weight: bold;">Disponible : <?= $produit->prix ?> </small>
+         <small>Disponible:</small>   <small class="text" style="font-weight: bold; color: green;"> <?= $produit->prix ?> </small>
               </div>
-            </div>
+            </div>  
           </div>
         </div>
   <?php endforeach; ?>

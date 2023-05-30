@@ -85,13 +85,13 @@ function afficherUnProduit($id)
     }
   }
 
-  function ajouteraverf($id,$image, $nom, $prix, $desc, $commentaire, $nombreProduits)
+  function ajouteraverf($id,$image, $nom, $prix, $desc, $commentaire, $nombreProduits,$division)
   {
     if(require("connexion.php"))
     {
-      $req = $access->prepare("INSERT INTO produits_verf (id,image, nom, prix, description,commentaire,quantité) VALUES (?,?,?,?,?,?,?)");
+      $req = $access->prepare("INSERT INTO produits_verf (id,image, nom, prix, description,commentaire,quantité,division) VALUES (?,?,?,?,?,?,?,?)");
 
-      $req->execute(array($id,$image, $nom, $prix, $desc, $commentaire, $nombreProduits));
+      $req->execute(array($id,$image, $nom, $prix, $desc, $commentaire, $nombreProduits,$division));
 
       $req->closeCursor();
     }
@@ -239,9 +239,35 @@ function getAdmin($email, $password){
 
     }
 
-  }
+  }}
 
-}
+  function getclient($email, $password){
+  
+    if(require("connexion.php")){
+  
+      $req = $access->prepare("SELECT * FROM client WHERE id=33");
+  
+      $req->execute();
+  
+      if($req->rowCount() == 1){
+        
+        $data = $req->fetchAll(PDO::FETCH_OBJ);
+  
+        foreach($data as $i){
+          $mail = $i->email;
+          $mdp = $i->motdepasse;
+        }
+  
+        if($mail == $email AND $mdp == $password)
+        {
+          return $data;
+        }
+        else{
+            return false;
+        }
+  }}}
+
+
 function getverf($email, $password){
   
   if(require("connexion.php")){

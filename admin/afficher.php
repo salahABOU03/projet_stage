@@ -55,7 +55,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
     </ul>
     <div style="margin-right: 500px">
         <h5 style="color: #545659; opacity: 0.5;">Connecté en tant que: <?= $nom ?></h5>
-    </div>
+        </div>
     <a class="btn btn-danger d-flex" style="display: flex; justify-content: flex-end;" href="destroy.php">Se deconnecter</a>
     </div>
 </div>
