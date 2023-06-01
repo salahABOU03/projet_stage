@@ -36,7 +36,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <div class="container-fluid">
-<a class="navbar-brand" href="../">MonoShop</a>
+<a class="navbar-brand" href="../">ProvinceMagasine </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -126,7 +126,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
                 <p>Commentaire: <?= $produit->commentaire ?></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <a href="livrer.php?pdt=<?= $produit->id ?>">
+                        <a href="livrer.php?pdt=<?= $produit->id ?>&pqt=<?= $produit->quantité ?>">
                             <button type="button" class="btn btn-sm btn-success">Commander</button>
                         </a>
                     </div>

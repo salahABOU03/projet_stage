@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `monoshop`
+-- Base de données : `ProvinceMagasine `
 --
 
 -- --------------------------------------------------------
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `pseudo`, `email`, `motdepasse`) VALUES
-(33, 'Fred', 'fred@admin.com', 'monoshop#123');
+(33, 'Fred', 'fred@admin.com', 'ProvinceMagasine #123');
 
 -- --------------------------------------------------------
 

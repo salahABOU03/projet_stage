@@ -85,6 +85,29 @@ function afficherUnProduit($id)
     }
   }
 
+  function diminuerPrixProduit($id, $iq) {
+    if (require("connexion.php")) {
+        // Requête pour récupérer le prix actuel du produit
+        $query = $access->prepare("SELECT prix FROM produits WHERE id = ?");
+        $query->execute(array($id));
+        $row = $query->fetch();
+
+        // Vérification si le produit existe
+        if ($row) {
+            $prixActuel = $row['prix'];
+            $nouveauPrix = $prixActuel - $iq;
+
+            // Requête pour mettre à jour le prix du produit
+            $updateQuery = $access->prepare("UPDATE produits SET prix = ? WHERE id = ?");
+            $updateQuery->execute(array($nouveauPrix, $id));
+        }
+
+        $query->closeCursor();
+        $updateQuery->closeCursor();
+    }
+}
+
+
   function ajouteraverf($id,$image, $nom, $prix, $desc, $commentaire, $nombreProduits,$division)
   {
     if(require("connexion.php"))

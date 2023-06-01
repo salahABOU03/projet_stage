@@ -33,7 +33,7 @@ if(isset($_SESSION['xRttpHo0greL39']))
 
         <div class="top">
           
-            <header>Admin</header>
+            <header>Responsable de confirmation</header>
         </div>
 
         <div class="input-field">
